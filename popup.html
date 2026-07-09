@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browser Storage Explorer</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>Storage Explorer</h1>
+    <div class="summary" id="summary">Loading...</div>
+  </header>
+
+  <section class="controls">
+    <input id="search" placeholder="Search keys and values" />
+    <div class="tabs">
+      <button class="tab active" data-type="all">All</button>
+      <button class="tab" data-type="localStorage">Local</button>
+      <button class="tab" data-type="sessionStorage">Session</button>
+      <button class="tab" data-type="cookies">Cookies</button>
+    </div>
+    <button id="refresh">Refresh</button>
+    <button id="clearAll">Clear All</button>
+  </section>
+
+  <div class="table-wrapper">
+    <table id="storageTable">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Key</th>
+          <th>Value</th>
+          <th>Size</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="emptyState" class="empty">No storage items found.</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
